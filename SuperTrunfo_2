@@ -1,0 +1,98 @@
+#include <stdio.h>
+
+int main (){
+
+    //Cidade1
+    char estado1 = 'A';                                                 //Letra de A a H
+    char codigoCarta1[4] = "A01";                                       // Ex: A01, B01
+    char nomeCidade1[50] = "Jacarei";                                   // Nome da cidade
+    unsigned long int populacao1 = 3000000;                                           // Quantidade de habitantes
+    float area1 = 464.3;                                                // Área em Km2
+    float pib1 = 1400000.0;                                             // Produto Interno Bruto
+    int pontosTuristicos1 = 3;                                          // Pontos turisticos totais
+    float densidadePopulacional1 = populacao1 / area1;                  // Densidade Populacional 
+    float pibPerCapita1 = pib1 / populacao1;                            // Pib Per Capita 
+    float superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1/ densidadePopulacional1);   // Super Poder
+
+    //Cidade2
+    char estado2 = 'B';                                                 //Letra de A a H
+    char codigoCarta2[4] = "B01";                                       // Ex: A01 e B01
+    char nomeCidade2[50] = "Tiradentes";                                // Nome da cidade
+    unsigned long int populacao2 = 80000;                               // Quantidade de habitantes
+    float area2 = 83.0;                                                 // Área em Km2
+    float pib2 = 20000000.0;                                            // Produto Interno Bruto
+    int pontosTuristicos2 = 16;                                         // Pontos turisticos totais
+    float densidadePopulacional2 = populacao2 / area2;                  // Densidade Populacional
+    float pibPerCapita2 = pib2 / populacao2;                            // PIB per Capita
+    float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 + (1/ densidadePopulacional2);   // Super Poder
+
+
+    // Exibindo as cartas:
+    printf ("----Cidade 1---- \n");
+    printf ("Estado: %c\n", estado1);
+    printf ("Código da Carta: %s\n", codigoCarta1);
+    printf ("Nome da cidade: %s\n", nomeCidade1);
+    printf ("População: %d\n", populacao1);
+    printf ("Área: %f\n", area1);
+    printf ("PIB: %.2f\n", pib1);
+    printf ("Pontos Turísticos: %d\n", pontosTuristicos1);
+    printf ("Densidade Populacional: %.1f\n", densidadePopulacional1);
+    printf ("PIB per Capita: %.2f\n", pibPerCapita1);
+    printf ("Super Poder: %.2f\n\n", superPoder1);
+
+    printf ("----Cidade 2---- \n");
+    printf ("Estado: %c\n", estado2);
+    printf ("Código da Carta: %s\n", codigoCarta2);
+    printf ("Nome da cidade: %s\n", nomeCidade2);
+    printf ("População: %d\n", populacao2);
+    printf ("Área: %.2f\n", area2);
+    printf ("PIB: %.2f\n", pib2);
+    printf ("Pontos Turísticos: %d\n", pontosTuristicos2);
+    printf ("Densidade Populacional: %.1f\n", densidadePopulacional2);
+    printf ("PIB per Capita: %.2f\n", pibPerCapita2);
+    printf ("Super Poder %.2f\n\n", superPoder2);
+
+    // Comparação entre a Cidade1 (carta 1) e Cidade 2 (carta 2):
+
+    if (populacao1 > populacao2){
+        printf ("A cidade 1 tem mais habitantes que a cidade 2, Jacareí vence! \n");
+    } else {
+        printf ("A cidade 2 tem mais habitantes que a cidade 1, Tiradentes vence!\n");
+    }
+
+    if (area1 > area2){
+        printf ("A cidade 1 tem uma Área por km2 maior que a cidade 2, Jacareí vence! \n");
+    } else {
+        printf ("A cidade 2 tem uma Área por km2 maior que a cidade 1, Tiradentes vence! \n");
+    }
+
+    if (pib1 > pib2){
+        printf ("A cidade 1 possuí um PIB maior que a cidade 2, Jacareí vence! \n");
+    } else {
+        printf ("A cidade 2 possuí um PIB maior que a cidade 1, Tiradentes vence! \n");
+    }
+
+    if (pontosTuristicos1 > pontosTuristicos2){
+        printf ("A cidade 1 possuí mais pontos turísticos que a cidade 2, Jacareí vence! \n");
+    } else {
+        printf ("A cidade 2 possuí mais pontos turísticos que a cidade 1, Tiradentes vence! \n");
+    }
+
+    if (densidadePopulacional1 < densidadePopulacional2){
+        printf ("A cidade 1 possuí uma densidade populacional menor que a cidade 2, Jacareí vence! \n");
+    } else {
+        printf ("A cidade 2 possuí uma densidade populacional menor que a cidade 1, Tiradentes vence! \n");
+    }
+
+    if (pibPerCapita1 > pibPerCapita2){
+        printf ("A cidade 1 possui um PIB per Capita maior que a cidade 2, Jacareí vence! \n");
+    } else{
+        printf ("A cidade 2 possuí um PIB per Capita maior que a cidade 1, Tiradentes vence!\n");
+    }
+
+    if (superPoder1 > superPoder2){
+        printf ("A cidade 1 possuí um super Poder mais forte que a cidade 2, jacareí vence! \n");
+    } else{
+        printf ("A cidade 2 possuí um super Poder mais forte que a cidade1, Tiradentes vence!\n");
+    }
+}
