@@ -52,47 +52,94 @@ int main (){
     printf ("PIB per Capita: %.2f\n", pibPerCapita2);
     printf ("Super Poder %.2f\n\n", superPoder2);
 
-    // Comparação entre a Cidade1 (carta 1) e Cidade 2 (carta 2):
+    int opcao;
 
-    if (populacao1 > populacao2){
-        printf ("A cidade 1 tem mais habitantes que a cidade 2, Jacareí vence! \n");
-    } else {
-        printf ("A cidade 2 tem mais habitantes que a cidade 1, Tiradentes vence!\n");
-    }
+    // Menu Interativo:
 
-    if (area1 > area2){
-        printf ("A cidade 1 tem uma Área por km2 maior que a cidade 2, Jacareí vence! \n");
-    } else {
-        printf ("A cidade 2 tem uma Área por km2 maior que a cidade 1, Tiradentes vence! \n");
-    }
+    printf ("========= Super Trunfo ========= \n\n");
+    printf ("Comparar qual atributo? \n");
+    printf ("Escolha uma opção (de 1 a 7) \n");
+    printf ("1. População. \n");
+    printf ("2. Área. \n");
+    printf ("3. PIB. \n");
+    printf ("4. Pontos Turísticos. \n");
+    printf ("5. Densidade Populacional. \n");
+    printf ("6. PIB per Capita. \n");
+    printf ("7. Super Poder. \n");
+    scanf ("%d", &opcao);
 
-    if (pib1 > pib2){
-        printf ("A cidade 1 possuí um PIB maior que a cidade 2, Jacareí vence! \n");
-    } else {
-        printf ("A cidade 2 possuí um PIB maior que a cidade 1, Tiradentes vence! \n");
-    }
+    // Comparação entre as estatísticas das cidades:
 
-    if (pontosTuristicos1 > pontosTuristicos2){
-        printf ("A cidade 1 possuí mais pontos turísticos que a cidade 2, Jacareí vence! \n");
-    } else {
-        printf ("A cidade 2 possuí mais pontos turísticos que a cidade 1, Tiradentes vence! \n");
+    printf ("\n Comparando %s (Carta 1) vs %s (Carta 2)\n", nomeCidade1, nomeCidade2);
+   
+    switch (opcao)
+    {
+        case 1:                                                             // Comparando a população entre as duas cartas
+            printf("População: %lu vs %lu\n", populacao1, populacao2);
+            if (populacao1 > populacao2)
+                printf("%s vence! \n", nomeCidade1);
+            else if (populacao1 < populacao2)
+                printf("%s vence \n", nomeCidade2);
+            else 
+                printf ("Empate! \n");
+        break;
+        case 2:                                                             // Comparando a Área em KM2 das duas cartas
+            printf("Área: %.2f vs %.2f\n", area1, area2);  
+            if (area1 > area2)
+                printf("%s vence! \n", nomeCidade2);
+            else if (area1 < area2)
+                printf("%s vence \n", nomeCidade2);
+            else 
+                printf ("Empate! \n");
+        break;
+        case 3:                                                              // Comparando o PIB das duas cartas       
+            printf("PIB: %.2f vs %.2f\n", pib1, pib2);
+            if (pib1 > pib2)
+                printf("%s vence! \n", nomeCidade1);
+            else if (pib1 < pib2)
+                printf("%s vence \n", nomeCidade2);
+            else 
+                printf ("Empate! \n");
+        break;
+        case 4:                                                               // Comparando os pontos turísticos das duas cartas
+            printf("Pontos Turísticos: %d vs %d\n", pontosTuristicos1, pontosTuristicos2);
+            if (pontosTuristicos1 > pontosTuristicos2)
+                printf("%s vence! \n", nomeCidade1);
+            else if (pontosTuristicos1 < pontosTuristicos2)
+                printf("%s vence \n", nomeCidade2);
+            else 
+                printf ("Empate! \n");
+        break;
+        case 5:                                                                // Comparando a densidade populacional das duas cartas
+            printf("Densidade Populacional: %.2f vs %.2f\n", densidadePopulacional1, densidadePopulacional2);
+            if (densidadePopulacional1 < densidadePopulacional2)
+                printf("%s vence! \n", nomeCidade1);
+            else if (densidadePopulacional1 > densidadePopulacional2)
+                printf("%s vence \n", nomeCidade2);
+            else 
+                printf ("Empate! \n");
+        break;
+        case 6:                                                                // Comparando o PIB per Capita das duas cartas 
+            printf("PIB per Capita: %.2f vs %.2f\n", pibPerCapita1, pibPerCapita2);
+            if (pibPerCapita1 > pibPerCapita2)
+                printf("%s vence! \n", nomeCidade1);
+            else if (pibPerCapita1 < pibPerCapita2)
+                printf("%s vence \n", nomeCidade2);
+            else 
+                printf ("Empate! \n");
+        break;
+        case 7:                                                                 // Comparando a habilidade Super Poder das duas cartas
+            printf("Super Poder: %.2f vs %.2f\n", superPoder1, superPoder2);
+            if (superPoder1 > superPoder2)
+                printf("%s vence! \n", nomeCidade1);
+            else if (superPoder1 < superPoder2)
+                printf("%s vence \n", nomeCidade2);
+            else 
+                printf ("Empate! \n");
+        break;
+    default:
+        printf ("Opção inválida! Por favor escolher entre a opção 1 e 7.\n");   // Caso o usuário não escolha uma alternativa adequada, o jogo será encerrado
+        break;
     }
-
-    if (densidadePopulacional1 < densidadePopulacional2){
-        printf ("A cidade 1 possuí uma densidade populacional menor que a cidade 2, Jacareí vence! \n");
-    } else {
-        printf ("A cidade 2 possuí uma densidade populacional menor que a cidade 1, Tiradentes vence! \n");
-    }
-
-    if (pibPerCapita1 > pibPerCapita2){
-        printf ("A cidade 1 possui um PIB per Capita maior que a cidade 2, Jacareí vence! \n");
-    } else{
-        printf ("A cidade 2 possuí um PIB per Capita maior que a cidade 1, Tiradentes vence!\n");
-    }
-
-    if (superPoder1 > superPoder2){
-        printf ("A cidade 1 possuí um super Poder mais forte que a cidade 2, jacareí vence! \n");
-    } else{
-        printf ("A cidade 2 possuí um super Poder mais forte que a cidade1, Tiradentes vence!\n");
-    }
+    return 0;
 }
